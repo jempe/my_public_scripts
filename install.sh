@@ -1,10 +1,5 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0 ]]; then
-	echo "You must be root to run this script." 1>&2
-	exit 100
-fi
-
 SCRIPTS_FOLDER=`pwd`
 
 function install_help() {
@@ -25,8 +20,17 @@ function install_help() {
 }
 
 function install_git() {
-	bash ./install_scripts/install_git_lfs.sh
+	read -p "We need root permissions to proceed. Press any key to continue"
+
+	sudo bash ./install_scripts/install_git_lfs.sh
 }
+
+function install_go() {
+	read -p "We need root permissions to proceed. Press any key to continue"
+
+	sudo bash ./install_scripts/install_golang.sh
+}
+
 
 COMMAND="$1"
 
