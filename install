@@ -17,6 +17,8 @@ function install_help() {
 	echo "	install adb (raspbian only)"
 	echo "./install.sh nvidia"
 	echo "	install nvidia drivers and cuda toolkit"
+	echo "./install.sh openscad"
+	echo "	compile and install openscad"
 }
 
 function install_git() {
@@ -31,6 +33,9 @@ function install_go() {
 	sudo bash ./install_scripts/install_golang.sh
 }
 
+function install_openscad() {
+	bash ./compile_scripts/compile_openscad.sh
+}
 
 COMMAND="$1"
 
@@ -41,6 +46,7 @@ case "$1" in
 	qt) shift;		install_qt ;;
 	adb) shift;		install_adb ;;
 	nvidia) shift;		install_nvidia ;;
+	openscad) shift;	install_openscad ;;
 	*)		install_help ;;
 esac
 
