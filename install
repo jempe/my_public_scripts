@@ -19,6 +19,8 @@ function install_help() {
 	echo "	install nvidia drivers and cuda toolkit"
 	echo "./install.sh openscad"
 	echo "	compile and install openscad"
+	echo "./install.sh fritzing"
+	echo "	compile and install fritzing"
 }
 
 function install_git() {
@@ -37,6 +39,11 @@ function install_openscad() {
 	bash ./compile_scripts/compile_openscad.sh
 }
 
+function install_fritzing() {
+	bash ./compile_scripts/compile_fritzing.sh
+}
+
+
 COMMAND="$1"
 
 case "$1" in
@@ -47,6 +54,7 @@ case "$1" in
 	adb) shift;		install_adb ;;
 	nvidia) shift;		install_nvidia ;;
 	openscad) shift;	install_openscad ;;
+	fritzing) shift;	install_fritzing ;;
 	*)		install_help ;;
 esac
 
