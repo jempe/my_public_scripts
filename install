@@ -30,6 +30,8 @@ function install_git() {
 }
 
 function install_go() {
+	bash ./install_scripts/install_golang_source.sh
+
 	read -p "We need root permissions to proceed. Press any key to continue"
 
 	sudo bash ./install_scripts/install_golang.sh

@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# install git and git lfs support
+# install latest go version
 
 if [[ $EUID -ne 0 ]]; then
 	echo "You must be root to run this script." 1>&2
 	exit 100
 fi
 
-GO_LATEST_VERSION=1.14
+GO_LATEST_VERSION=1.14.2
 GOROOT_FOLDER=/opt/go
 GOROOT_VERSION_FOLDER=$GOROOT_FOLDER$GO_LATEST_VERSION
 
