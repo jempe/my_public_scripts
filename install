@@ -7,6 +7,8 @@ function install_help() {
 	echo "Usage:"
 	echo "./install.sh go"
 	echo "	install golang"
+	echo "./install.sh java"
+	echo "	install java"
 	echo "./install.sh vim"
 	echo "	install vim mercurial git meld"
 	echo "./install.sh git"
@@ -28,6 +30,13 @@ function install_git() {
 
 	sudo bash ./install_scripts/install_git_lfs.sh
 }
+
+function install_java() {
+	read -p "We need root permissions to proceed. Press any key to continue"
+
+	sudo bash ./install_scripts/install_java.sh
+}
+
 
 function install_go() {
 	bash ./install_scripts/install_golang_source.sh
@@ -51,6 +60,7 @@ COMMAND="$1"
 case "$1" in
 	go) shift;		install_go ;;
 	vim) shift;		install_vim ;;
+	java) shift;		install_java ;;
 	git) shift;		install_git ;;
 	qt) shift;		install_qt ;;
 	adb) shift;		install_adb ;;
