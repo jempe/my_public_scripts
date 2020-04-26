@@ -50,3 +50,5 @@ make
 read -p "We need root permissions to install dependencies. Press any key to continue"
 
 sudo make install
+
+sudo ldconfig # update ldconfig to make sure the system is aware of opencv libraries
