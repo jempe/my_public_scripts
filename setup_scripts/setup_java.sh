@@ -8,6 +8,6 @@ else
 	echo "setting up java enviroment variables"
 	echo " " >> $BASHRC_FILE
 	echo "#JAVA environment variables" >> $BASHRC_FILE
-	echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/' >> $BASHRC_FILE
+	echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/' >> $BASHRC_FILE
 fi
 

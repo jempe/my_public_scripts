@@ -23,6 +23,8 @@ function install_help() {
 	echo "	compile and install openscad"
 	echo "./install.sh fritzing"
 	echo "	compile and install fritzing"
+	echo "./install.sh opencv"
+	echo "	compile and install opencv 4"
 }
 
 function install_git() {
@@ -54,6 +56,10 @@ function install_fritzing() {
 	bash ./compile_scripts/compile_fritzing.sh
 }
 
+function install_opencv() {
+	bash ./compile_scripts/compile_opencv.sh
+}
+
 
 COMMAND="$1"
 
@@ -67,7 +73,8 @@ case "$1" in
 	nvidia) shift;		install_nvidia ;;
 	openscad) shift;	install_openscad ;;
 	fritzing) shift;	install_fritzing ;;
-	*)		install_help ;;
+	opencv) shift;		install_opencv ;;
+	*)			install_help ;;
 esac
 
 exit 0

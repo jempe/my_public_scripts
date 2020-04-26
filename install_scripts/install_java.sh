@@ -7,4 +7,4 @@ if [[ $EUID -ne 0 ]]; then
 	exit 100
 fi
 
-apt install default-jdk
+apt install openjdk-8-jdk
