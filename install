@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SCRIPTS_FOLDER=`pwd`
+SCRIPTS_FOLDER=$( dirname "${BASH_SOURCE[0]}" )
 
 function install_help() {
 	echo "install helper script"
@@ -32,18 +32,18 @@ function install_help() {
 function install_git() {
 	read -p "We need root permissions to proceed. Press any key to continue"
 
-	sudo bash ./install_scripts/install_git_lfs.sh
+	sudo bash $SCRIPTS_FOLDER/install_scripts/install_git_lfs.sh
 }
 
 function install_java() {
 	read -p "We need root permissions to proceed. Press any key to continue"
 
-	sudo bash ./install_scripts/install_java.sh
+	sudo bash $SCRIPTS_FOLDER/install_scripts/install_java.sh
 }
 
 
 function install_go() {
-	bash ./install_scripts/install_golang_source.sh
+	bash $SCRIPTS_FOLDER/install_scripts/install_golang_source.sh
 
 	read -p "We need root permissions to proceed. Press any key to continue"
 
@@ -51,19 +51,19 @@ function install_go() {
 }
 
 function install_wordpress() {
-	bash ./install_scripts/install_wordpress.sh
+	bash $SCRIPTS_FOLDER/install_scripts/install_wordpress.sh
 }
 
 function install_openscad() {
-	bash ./compile_scripts/compile_openscad.sh
+	bash $SCRIPTS_FOLDER/compile_scripts/compile_openscad.sh
 }
 
 function install_fritzing() {
-	bash ./compile_scripts/compile_fritzing.sh
+	bash $SCRIPTS_FOLDER/compile_scripts/compile_fritzing.sh
 }
 
 function install_opencv() {
-	bash ./compile_scripts/compile_opencv.sh
+	bash $SCRIPTS_FOLDER/compile_scripts/compile_opencv.sh
 }
 
 

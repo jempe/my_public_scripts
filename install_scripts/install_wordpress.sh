@@ -1,8 +1,7 @@
 #!/bin/bash
 
 WP_DIR=`pwd`"/wp"
-CONTENT_DIR=`pwd`"/content"
-UPLOADS_DIR="$CONTENT_DIR/wp-content/uploads"
+UPLOADS_DIR="$WP_DIR/wp-content/uploads"
 
 
 WP_LATEST_VERSION='5.4.1'
@@ -30,7 +29,7 @@ else
 	mkdir -p $UPLOADS_DIR
 
 	chmod 0700 $UPLOADS_DIR
-	setfacl -m u:www-data:rw $UPLOADS_DIR
+	setfacl -m u:www-data:rwx $UPLOADS_DIR
 
 	echo "Edit the file $WP_DIR/wp-config.php by following the instructions of https://wordpress.org/support/article/editing-wp-config-php/" 
 fi
