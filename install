@@ -25,6 +25,8 @@ function install_help() {
 	echo "	compile and install fritzing"
 	echo "./install.sh opencv"
 	echo "	compile and install opencv 4"
+	echo "./install.sh wordpress"
+	echo "	install wordpress in folder wp"
 }
 
 function install_git() {
