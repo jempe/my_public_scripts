@@ -50,6 +50,10 @@ function install_go() {
 	sudo bash ./install_scripts/install_golang.sh
 }
 
+function install_wordpress() {
+	bash ./install_scripts/install_wordpress.sh
+}
+
 function install_openscad() {
 	bash ./compile_scripts/compile_openscad.sh
 }
@@ -76,6 +80,7 @@ case "$1" in
 	openscad) shift;	install_openscad ;;
 	fritzing) shift;	install_fritzing ;;
 	opencv) shift;		install_opencv ;;
+	wordpress) shift;	install_wordpress ;;
 	*)			install_help ;;
 esac
 
