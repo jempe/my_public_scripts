@@ -6,6 +6,7 @@ OPENSCAD_RELEASE="openscad-2019.05"
 
 OPENSCAD_FOLDER="$HOME/bin/openscad"
 
+CORES=$(nproc)
 
 
 if [ -d $OPENSCAD_FOLDER ];
@@ -29,7 +30,7 @@ sudo ./scripts/uni-get-dependencies.sh
 
 qmake openscad.pro
 
-make
+make -j "$CORES"
 
 read -p "We need root permissions to install openscad. Press any key to continue"
 

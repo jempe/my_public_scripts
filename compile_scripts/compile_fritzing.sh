@@ -11,6 +11,9 @@ FRITZING_FOLDER="$HOME/bin/fritzing-app"
 FRITZINGPARTS_RELEASE="0.9.3b"
 FRITZINGPARTS_FOLDER="$HOME/bin/fritzing-parts"
 
+CORES=$(nproc)
+
+
 if [ -d $FRITZING_FOLDER ];
 then
 	echo "$FRITZING_FOLDER already exists"	
@@ -60,7 +63,7 @@ sudo apt install build-essential git cmake libssl-dev libudev-dev qt5-default li
 sed -i 's/LIBGIT_STATIC = true/LIBGIT_STATIC = false/' phoenix.pro
 
 qmake phoenix.pro
-make
+make -j "$CORES"
 
 cd $FRITZINGPARTS_FOLDER
 

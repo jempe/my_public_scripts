@@ -6,6 +6,8 @@ OPENCV_RELEASE="4.3.0"
 
 OPENCV_FOLDER="$HOME/bin/opencv"
 OPENCV_CONTRIB_FOLDER="$HOME/bin/opencv_contrib"
+CORES=$(nproc)
+
 
 if [ -d $OPENCV_FOLDER ];
 then
@@ -45,7 +47,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
         -D BUILD_EXAMPLES=ON ..
 
-make
+make -j "$CORES"
 
 read -p "We need root permissions to install dependencies. Press any key to continue"
 
