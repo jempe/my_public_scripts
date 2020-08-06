@@ -27,7 +27,20 @@ function install_help() {
 	echo "	compile and install opencv 4"
 	echo "./install.sh wordpress"
 	echo "	install wordpress in folder wp"
+	echo "./install.sh rpitools"
+	echo "	install raspberry pi development tools"
 }
+
+function install_rpitools() {
+	read -p "We need root permissions to proceed. Press any key to continue"
+
+	sudo apt update
+	sudo apt install gcc-multilib lib32z1 lib32ncurses5
+
+
+	bash $SCRIPTS_FOLDER/install_scripts/install_rpitools.sh
+}
+
 
 function install_git() {
 	read -p "We need root permissions to proceed. Press any key to continue"
@@ -81,6 +94,7 @@ case "$1" in
 	fritzing) shift;	install_fritzing ;;
 	opencv) shift;		install_opencv ;;
 	wordpress) shift;	install_wordpress ;;
+	rpitools) shift;	install_rpitools ;;
 	*)			install_help ;;
 esac
 
