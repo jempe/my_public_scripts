@@ -11,6 +11,8 @@ sudo apt update
 
 sudo apt install nginx mariadb-server php-mysql php-fpm php-cli
 
+sudo mysql_secure_installation
+
 PHPVERSION='7.2'
 
 if grep -q "DISTRIB_RELEASE=20.04" /etc/lsb-release;
