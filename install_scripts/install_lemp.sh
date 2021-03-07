@@ -9,7 +9,7 @@ fi
 
 sudo apt update
 
-sudo apt install nginx mariadb-server php-mysql php-fpm php-cli
+sudo apt install nginx mariadb-server php-mysql php-fpm php-cli php-xml php-gd
 
 sudo mysql_secure_installation
 
