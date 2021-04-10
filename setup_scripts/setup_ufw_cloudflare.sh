@@ -17,7 +17,10 @@ ufw allow from 188.114.96.0/20 to any port 80
 ufw allow from 197.234.240.0/22 to any port 80
 ufw allow from 198.41.128.0/17 to any port 80
 ufw allow from 162.158.0.0/15 to any port 80
-ufw allow from 104.16.0.0/12 to any port 80
+#ufw allow from 104.16.0.0/12 to any port 80
+ufw allow from 104.16.0.0/13 to any port 80
+ufw allow from 104.24.0.0/14 to any port 80
+
 ufw allow from 172.64.0.0/13 to any port 80
 ufw allow from 131.0.72.0/22 to any port 80
 
@@ -42,7 +45,10 @@ ufw allow from 188.114.96.0/20 to any port 443
 ufw allow from 197.234.240.0/22 to any port 443
 ufw allow from 198.41.128.0/17 to any port 443
 ufw allow from 162.158.0.0/15 to any port 443
-ufw allow from 104.16.0.0/12 to any port 443
+#ufw allow from 104.16.0.0/12 to any port 443
+ufw allow from 104.16.0.0/13 to any port 443
+ufw allow from 104.24.0.0/14 to any port 443
+
 ufw allow from 172.64.0.0/13 to any port 443
 ufw allow from 131.0.72.0/22 to any port 443
 
