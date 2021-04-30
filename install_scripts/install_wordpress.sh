@@ -4,7 +4,7 @@ WP_DIR=`pwd`"/wp"
 UPLOADS_DIR="$WP_DIR/wp-content/uploads"
 
 
-WP_LATEST_VERSION='5.7'
+WP_LATEST_VERSION='5.7.1'
 
 read -p "Do you want to install worpress in $WP_DIR (N/y)" INSTALL_RESPONSE
 
