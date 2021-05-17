@@ -1,5 +1,10 @@
 #!/bin/bash
-BASHRC_FILE=~/.bashrc
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	BASHRC_FILE=~/.bashrc
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	BASHRC_FILE=~/.zprofile
+fi
+
 GO_PATH=~/go
 
 if [ -d $GO_PATH ];
