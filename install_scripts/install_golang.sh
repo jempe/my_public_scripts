@@ -25,6 +25,9 @@ else
 	elif [ "$COMPUTER_ARCH" = "i686" ]; 
 	then
 		GO_ARCH="386"
+	elif [ "$COMPUTER_ARCH" = "armv6l" ]; 
+	then
+		GO_ARCH="armv6l"
 	elif [ "$COMPUTER_ARCH" = "armv7l" ]; 
 	then
 		GO_ARCH="armv6l"
