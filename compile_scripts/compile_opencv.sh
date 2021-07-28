@@ -19,7 +19,7 @@ sudo cp * /usr/local/cuda/include/
 read -p "We need root permissions to install dependencies. Press any key to continue"
 
 sudo apt update
-sudo apt install unzip wget build-essential cmake curl git libgtk2.0-dev libgtk-3-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
+sudo apt install unzip wget build-essential cmake curl git libgtk2.0-dev libgtk-3-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev opencl-headers ocl-icd-opencl-dev
 
 sudo apt install system76-cudnn-11.1
 
