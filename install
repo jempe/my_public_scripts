@@ -33,6 +33,8 @@ function install_help() {
 	echo "	install raspberry pi development tools"
 	echo "./install.sh lemp"
 	echo "	install nginx, mariadb and php"
+	echo "./install.sh postgres"
+	echo "	install postgresql"
 }
 
 function install_rpitools() {
@@ -113,6 +115,9 @@ function install_opencv() {
 	bash $SCRIPTS_FOLDER/compile_scripts/compile_opencv.sh
 }
 
+function install_postgres() {
+	bash $SCRIPTS_FOLDER/install_scripts/install_postgres.sh
+}
 
 COMMAND="$1"
 
@@ -130,6 +135,7 @@ case "$1" in
 	wordpress) shift;	install_wordpress ;;
 	rpitools) shift;	install_rpitools ;;
 	lemp) shift;		install_lemp ;;
+	postgres) shift;	install_postgres ;;
 	*)			install_help ;;
 esac
 
