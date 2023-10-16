@@ -11,6 +11,8 @@ sed 's/\xEF\x82\xB1/±/g' | # plus minus
 sed 's/\xEF\x81\x84/∆/g' | # capital delta
 sed 's/\xEF\x81\xB0/π/g' | # pi
 sed 's/\xEF\x81\xB1/θ/g' | # theta
+sed 's/\xEF\x81\xB2/θ/g' | # theta
+sed 's/\xEF\x81\xB3/σ/g' | # o
 sed "s/\xEF\x82\xA2/'/g" | # apostrophe
 sed 's/\xEF\x80\xA8/(/g' | # open parenthesis
 sed 's/\xEF\x83\xA7/(/g' | # open parenthesis
@@ -20,4 +22,5 @@ sed 's/\xEF\x83\xB7/)/g' | # close parenthesis
 sed 's/\xEF\x83\xB8/ /g' | # not sure
 sed 's/\xEF\x82\xB6/δ/g' | # delta
 sed 's/\xEF\x82\xB0/°/g' | # delta
+sed 's/\xEF\x82\xBB/≈/g' | # similar
 sed 's/\xEF\x80\xAB/+/g' # plus sign
