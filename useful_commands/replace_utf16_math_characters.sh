@@ -1,6 +1,7 @@
 #/bin/bash
 
 
+sed 's/\xF4\x8F\xB0\x80/ti/g' | # ti
 sed 's/\xEF\x80\xAD/-/g' | # soft hyphen
 sed 's/\xEF\x80\xBD/=/g' | # double hyphen
 sed 's/\xEF\x83\x9E/⇒/g' | # arrow
