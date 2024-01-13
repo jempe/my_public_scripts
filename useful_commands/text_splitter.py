@@ -1,7 +1,8 @@
 #this utility is used to split a text file into chunks of 1000 words each, they should end in a sentence
 #usage: python text_splitter.py <filename>
 
-from langchain.text_splitter import NLTKTextSplitter
+#from langchain.text_splitter import NLTKTextSplitter
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 import sys
 import tiktoken
 
@@ -21,9 +22,14 @@ filename = sys.argv[1]
 with open(filename, 'r') as f:
     filetext = f.read()
 
-splitter = NLTKTextSplitter(chunk_size=1000)
+#splitter = NLTKTextSplitter(chunk_size=1000)
 
-docs = splitter.create_documents([filetext])
+#docs = splitter.create_documents([filetext])
+
+splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+    chunk_size=3000, chunk_overlap=50, encoding_name="cl100k_base"
+)
+
 texts = splitter.split_text(filetext)
 
 for text in texts:
