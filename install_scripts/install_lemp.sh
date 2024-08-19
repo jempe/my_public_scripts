@@ -22,6 +22,13 @@ then
 	echo "Ubuntu 20.04 detected, changing PHP version to $PHPVERSION"
 fi
 
+if grep -q "DISTRIB_RELEASE=24.04" /etc/lsb-release;
+then
+	PHPVERSION='8.3'
+
+	echo "Ubuntu 24.04 detected, changing PHP version to $PHPVERSION"
+fi
+
 echo "Trying to fix CGI pathinfo vulnerability. Plese check that cgi.fix_pathinfo equals 0 in PHP info page"
 sudo sed -i 's/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g' /etc/php/$PHPVERSION/fpm/php.ini
 
