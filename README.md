@@ -2,87 +2,60 @@
 
 This repository contains a collection of shell scripts designed to automate the installation, compiling and configuration of various software and tools. Each script is tailored for a specific purpose, making it easier to set up your development environment or deploy applications.
 
-## Installation Scripts
+General Usage
+
+	1.	Open a Terminal: Navigate to the directory where the install script resides.
+	2.	Make the Script Executable (if not already):
+
+chmod +x install
 
 
-Table of Contents
+	3.	Run the Script:
 
-	•	Included Scripts
-	•	Usage
-	•	Prerequisites
-	•	Contributing
-	•	License
+./install <command>
 
-Included Scripts
+Replace <command> with the specific software or tool you want to install.
 
-	1.	install_akaunting.sh
-Automates the installation of Akaunting, a free, open-source accounting software.
-	2.	install_git_lfs.sh
-Installs Git Large File Storage (Git LFS), a Git extension for versioning large files.
-	3.	install_gitea.sh
-Installs Gitea, a lightweight self-hosted Git service.
-	4.	install_golang.sh
-Installs Go (Golang) using precompiled binaries.
-	5.	install_golang_source.sh
-Builds and installs Go (Golang) from source.
-	6.	install_java.sh
-Sets up Java, including OpenJDK installation.
-	7.	install_lemp.sh
-Installs a LEMP stack (Linux, Nginx, MySQL/MariaDB, PHP) for web hosting.
-	8.	install_postgres.sh
-Installs PostgreSQL, an open-source relational database.
-	9.	install_rpitools.sh
-Installs tools and utilities for Raspberry Pi.
-	10.	install_wordpress.sh
-Automates the installation and configuration of WordPress.
+Supported Commands
 
-Usage
+The script provides several commands to install or compile different tools. Below is a list of available commands and their descriptions:
 
-	1.	Clone the repository:
+Command	Description
+go	Installs Golang and sets up the Go environment.
+java	Installs Java.
+vim	Installs Vim, Mercurial, Git, and Meld.
+git	Installs Git and Git LFS support.
+qt	Installs Qt (specific to Raspbian).
+adb	Installs ADB (specific to Raspbian).
+nvidia	Installs NVIDIA drivers and CUDA toolkit.
+openscad	Compiles and installs OpenSCAD.
+fritzing	Compiles and installs Fritzing.
+opencv	Compiles and installs OpenCV 4.
+wordpress	Installs WordPress in a folder named wp.
+rpitools	Installs Raspberry Pi development tools.
+lemp	Installs Nginx, MariaDB, and PHP (LEMP stack).
+postgres	Installs PostgreSQL.
+(no command)	Displays the help message with usage instructions.
 
-git clone https://github.com/jempe/my_public_scripts.git
-cd my_public_scripts
+Example Commands
+
+	1.	Install Golang:
+
+./install go
 
 
-	2.	Make a script executable:
+	2.	Install Git with LFS support:
 
-chmod +x install_<script_name>.sh
-
-
-	3.	Run the script with superuser privileges:
-
-sudo ./install_<script_name>.sh
-
-Prerequisites
-
-	•	A Unix-based operating system (Linux/macOS)
-	•	Basic knowledge of shell scripting
-	•	Sufficient permissions to install software (root or sudo access)
-
-Contributing
-
-Contributions are welcome! If you have suggestions for new scripts or improvements to existing ones, feel free to open an issue or submit a pull request.
-	1.	Fork the repository.
-	2.	Create a new branch for your feature or fix:
-
-git checkout -b feature-name
+./install git
 
 
-	3.	Commit your changes:
+	3.	Compile and Install OpenSCAD:
 
-git commit -m "Add a meaningful commit message"
+./install openscad
 
+Additional Notes
 
-	4.	Push to your branch:
-
-git push origin feature-name
-
-
-	5.	Open a pull request.
-
-License
-
-This project is licensed under the MIT License.
-
-
-
+	•	The script uses sudo for many commands, so you may need administrator privileges.
+	•	It references other scripts in the install_scripts and compile_scripts directories, which should be present alongside the main script.
+	•	If you see a message like “We need root permissions to proceed,” you’ll need to press a key to continue when prompted.
+	•	To add or modify a command, you can extend the script by editing the case statement and adding a corresponding function.
